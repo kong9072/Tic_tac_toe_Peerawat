@@ -29,7 +29,7 @@ require_once(__DIR__."/header.php");
          <button id="PlayBtn" class = "button mt-3"style="width: 15%;" data-bs-toggle="modal" data-bs-target="#exampleModal1">Versus Player</button>
         </div>
          <div claass = "row">
-        <button id="PlayBtn" class = "button mt-3"style="width: 15%;"data-bs-toggle="modal" data-bs-target="#exampleModal2">Versus AI</button>
+        <button id="PlayBtn2" class = "button mt-3"style="width: 15%;"data-bs-toggle="modal" data-bs-target="#exampleModal2">Versus AI</button>
         
         </div>
  
@@ -96,7 +96,7 @@ require_once(__DIR__."/header.php");
 </body>
 </html>
 <script>
-    var root = location.protocol + '//' + location.host +'/Tic_tac_toe_Peerawat'; // offline
+   // var root = location.protocol + '//' + location.host +'/Tic_tac_toe_Peerawat'; // offline
     $('#createboard').click( function(){
     var BoardSize = $("#BoardSize").val();
     var action = "createboard";

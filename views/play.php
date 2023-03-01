@@ -113,15 +113,15 @@
 </body>
 </html>
 <script>
-   var root = location.protocol + '//' + location.host +'/Tic_tac_toe_Peerawat';
+   //var root = location.protocol + '//' + location.host +'/Tic_tac_toe_Peerawat';
     $('#PlayBtn').click( function(){
       
         console.log('aaaaa');
     });
-   PlayBtn.addEventListener("click", check);
-   function check(){
-    console.log('sss');
-   }
+  //  PlayBtn.addEventListener("click", check);
+  //  function check(){
+  //   console.log('sss');
+  //  }
    $('#createboard').click( function(){
     var BoardSize = $("#BoardSize").val();
     window.location.replace(root + '/play/'+BoardSize); 
@@ -210,11 +210,12 @@ function cellClicked(){
   console.log(row,col);
     updateCell(this, col,row,cellIndex);
     checkWinner(col,row);
-    if(game_type==1){
-    var AIcellIndex = AIoptions[Math.floor(Math.random()*AIoptions.length)]
+    if(game_type==1&&running){
+    var AIcellIndex = AIoptions[Math.floor(Math.random()*(AIoptions.length-1))]
     let colai = AIcellIndex % Size
     let rowai = (AIcellIndex - colai) / Size
     console.log(AIcellIndex);
+    AIoptions = arrayRemove(AIoptions, AIcellIndex);
     options[rowai][colai] = currentPlayer;
     cellmark = document.querySelector("#cellindex"+AIcellIndex);
     cellmark.textContent = currentPlayer;
